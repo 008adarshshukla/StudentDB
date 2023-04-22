@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct StudentDBApp: App {
+    
+    @StateObject private var coreDataViewModel = CoreDataViewModel()
+    
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environmentObject(coreDataViewModel)
         }
     }
 }

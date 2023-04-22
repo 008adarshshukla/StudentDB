@@ -55,8 +55,8 @@
 		02DB6B6E29F39A8D00FDFBC5 /* StudentDB */ = {
 			isa = PBXGroup;
 			children = (
-				02DB6B8029F39BAA00FDFBC5 /* CoreDataModel */,
 				02DB6B6F29F39A8D00FDFBC5 /* StudentDBApp.swift */,
+				02DB6B8029F39BAA00FDFBC5 /* CoreDataModel */,
 				02DB6B7F29F39AC900FDFBC5 /* Models */,
 				02DB6B7E29F39AC400FDFBC5 /* Views */,
 				02DB6B7D29F39ABA00FDFBC5 /* ViewModels */,
