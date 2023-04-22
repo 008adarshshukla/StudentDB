@@ -13,6 +13,8 @@ struct StudentFormView: View {
     @State private var rollNumber: String = ""
     @State private var standard: String = ""
     @State private var address: String = ""
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var coreDataViewModel: CoreDataViewModel
     
     var body: some View {
         NavigationStack {
@@ -31,6 +33,23 @@ struct StudentFormView: View {
             }
             .padding(.vertical)
             .navigationTitle("Student Deatils")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Circle()
+                            .foregroundColor(.white)
+                            .frame(width: 50, height: 50)
+                            .overlay(alignment: .center) {
+                                Image(systemName: "xmark")
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+                            }
+                            
+                    }
+                }
+            }
         }
     }
     
@@ -71,7 +90,7 @@ struct StudentFormView: View {
     //MARK: Address Field
     @ViewBuilder
     func addressField() -> some View {
-        TextField("Type your roll number...", text: $address)
+        TextField("Type your address...", text: $address)
             .font(.headline)
             .padding()
             .background(Color.gray.opacity(0.3).cornerRadius(20))
@@ -83,22 +102,31 @@ struct StudentFormView: View {
     @ViewBuilder
     func submitButton() -> some View {
         Button {
-            
+            coreDataViewModel.addStudent(name: name, rollNumber: rollNumber, standarad: standard, address: address)
+            dismiss()
         } label: {
             RoundedRectangle(cornerRadius: 10)
+                .foregroundColor(isAnyFieldEmpty() ? .black : .blue)
                 .frame(width: UIScreen.main.bounds.width / 2 ,height: 50)
                 .overlay(alignment: .center) {
-                    Text("Add Student")
+                    Text("Submit")
                         .foregroundColor(.white)
                         .font(.title3)
                         .fontWeight(.semibold)
                 }
         }
+        .disabled(isAnyFieldEmpty())
+    }
+    
+    //MARK: Check if any field is empty.
+    func isAnyFieldEmpty() -> Bool {
+        return name.isEmpty || rollNumber.isEmpty || standard.isEmpty || address.isEmpty
     }
 }
 
 struct StudentFormView_Previews: PreviewProvider {
     static var previews: some View {
         StudentFormView()
+            .environmentObject(CoreDataViewModel())
     }
 }

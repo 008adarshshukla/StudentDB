@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var coreDataViewModel: CoreDataViewModel
+    @State private var showFormView: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -19,7 +20,28 @@ struct HomeView: View {
                 }
                 else {
                     List {
+                        Section {
+                            ForEach(coreDataViewModel.savedEntities) { entity in
+                                StudentRowView(entity: entity, isFavouriteList: false)
+                            }
+                            .onDelete { indexSet in
+                                coreDataViewModel.removeStudent(indexSet: indexSet)
+                            }
+                        } header: {
+                            Text("All Students")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                        }
                         
+                        Section {
+                            ForEach(coreDataViewModel.favouriteEntities) { entity in
+                                StudentRowView(entity: entity, isFavouriteList: true)
+                            }
+                        } header: {
+                            Text("Favourite Students")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                        }
                     }
                 }
             }
@@ -28,7 +50,7 @@ struct HomeView: View {
                 //MARK: Trailing Button
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        
+                        showFormView = true
                     } label: {
                         Circle()
                             .foregroundColor(.white)
@@ -62,6 +84,9 @@ struct HomeView: View {
             })
             .navigationTitle("Students")
         }
+        .fullScreenCover(isPresented: $showFormView) {
+            StudentFormView()
+        }
     }
     
     //MARK: Add student View...
@@ -93,7 +118,7 @@ struct HomeView: View {
                     Spacer()
                     
                     Button {
-                        
+                        showFormView = true
                     } label: {
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: UIScreen.main.bounds.width / 2 ,height: 50)

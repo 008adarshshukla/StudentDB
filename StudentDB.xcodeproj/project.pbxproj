@@ -11,9 +11,10 @@
 		02DB6B7229F39A8D00FDFBC5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB6B7129F39A8D00FDFBC5 /* HomeView.swift */; };
 		02DB6B7429F39A8F00FDFBC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02DB6B7329F39A8F00FDFBC5 /* Assets.xcassets */; };
 		02DB6B7729F39A8F00FDFBC5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02DB6B7629F39A8F00FDFBC5 /* Preview Assets.xcassets */; };
-		02DB6B8329F39BEB00FDFBC5 /* StdentsContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02DB6B8129F39BEB00FDFBC5 /* StdentsContainer.xcdatamodeld */; };
+		02DB6B8329F39BEB00FDFBC5 /* StudentsContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02DB6B8129F39BEB00FDFBC5 /* StudentsContainer.xcdatamodeld */; };
 		02DB6B8529F39DB800FDFBC5 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB6B8429F39DB800FDFBC5 /* CoreDataViewModel.swift */; };
 		02DB6B8729F3ACEB00FDFBC5 /* StudentFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB6B8629F3ACEB00FDFBC5 /* StudentFormView.swift */; };
+		02DB6B8B29F3B67600FDFBC5 /* StudentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB6B8A29F3B67600FDFBC5 /* StudentRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		02DB6B8229F39BEB00FDFBC5 /* StdentsContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StdentsContainer.xcdatamodel; sourceTree = "<group>"; };
 		02DB6B8429F39DB800FDFBC5 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
 		02DB6B8629F3ACEB00FDFBC5 /* StudentFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentFormView.swift; sourceTree = "<group>"; };
+		02DB6B8A29F3B67600FDFBC5 /* StudentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				02DB6B7129F39A8D00FDFBC5 /* HomeView.swift */,
 				02DB6B8629F3ACEB00FDFBC5 /* StudentFormView.swift */,
+				02DB6B8A29F3B67600FDFBC5 /* StudentRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -103,7 +106,7 @@
 		02DB6B8029F39BAA00FDFBC5 /* CoreDataModel */ = {
 			isa = PBXGroup;
 			children = (
-				02DB6B8129F39BEB00FDFBC5 /* StdentsContainer.xcdatamodeld */,
+				02DB6B8129F39BEB00FDFBC5 /* StudentsContainer.xcdatamodeld */,
 			);
 			path = CoreDataModel;
 			sourceTree = "<group>";
@@ -179,9 +182,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				02DB6B7229F39A8D00FDFBC5 /* HomeView.swift in Sources */,
+				02DB6B8B29F3B67600FDFBC5 /* StudentRowView.swift in Sources */,
 				02DB6B8729F3ACEB00FDFBC5 /* StudentFormView.swift in Sources */,
 				02DB6B8529F39DB800FDFBC5 /* CoreDataViewModel.swift in Sources */,
-				02DB6B8329F39BEB00FDFBC5 /* StdentsContainer.xcdatamodeld in Sources */,
+				02DB6B8329F39BEB00FDFBC5 /* StudentsContainer.xcdatamodeld in Sources */,
 				02DB6B7029F39A8D00FDFBC5 /* StudentDBApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,13 +389,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		02DB6B8129F39BEB00FDFBC5 /* StdentsContainer.xcdatamodeld */ = {
+		02DB6B8129F39BEB00FDFBC5 /* StudentsContainer.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				02DB6B8229F39BEB00FDFBC5 /* StdentsContainer.xcdatamodel */,
 			);
 			currentVersion = 02DB6B8229F39BEB00FDFBC5 /* StdentsContainer.xcdatamodel */;
-			path = StdentsContainer.xcdatamodeld;
+			path = StudentsContainer.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
