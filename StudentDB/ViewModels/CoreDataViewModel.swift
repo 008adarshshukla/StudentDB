@@ -37,7 +37,7 @@ class CoreDataViewModel: ObservableObject {
         }
     }
     
-    func addStudent(name: String, rollNumber: String, standarad: Int64, isFavourite: Bool = false, address: String) {
+    func addStudent(name: String, rollNumber: String, standarad: String, isFavourite: Bool = false, address: String) {
         let newStudent = StudentEntity(context: container.viewContext)
         newStudent.name = name
         newStudent.rollNumber = rollNumber

@@ -5,6 +5,6 @@
         <attribute name="isFavourite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="rollNumber" optional="YES" attributeType="String"/>
-        <attribute name="standard" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="standard" optional="YES" attributeType="String"/>
     </entity>
 </model>
